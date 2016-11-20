@@ -6,7 +6,7 @@ namespace Assets.Scripts.BaseClasses.Net
     public class SyncListVector3 : SyncList<Vector3>
     {
         protected override void SerializeItem(NetworkWriter writer, Vector3 item)
-        {
+        { 
             writer.Write(item);
         }
 
