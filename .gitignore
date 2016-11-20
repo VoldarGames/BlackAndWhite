@@ -243,3 +243,15 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+#Ignorar Build Unity
+BlackAndWhiteOnline_Data/*
+BlackAndWhiteOnline_Data/**/*
+*.exe
+*.pdb
+TestResults/*
+TestResults/**/*
+Temp/*
+Temp/**/*
+Library/*
+Library/**/*
