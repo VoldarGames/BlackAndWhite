@@ -604,6 +604,7 @@ GameObject:
   - 114: {fileID: 11466428}
   - 114: {fileID: 11475086}
   - 114: {fileID: 11410494}
+  - 114: {fileID: 11464774}
   m_Layer: 5
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -2798,6 +2799,17 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+--- !u!114 &11464774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d15f2051d09644ebccdef0f54b7bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11465630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3198,7 +3210,10 @@ MonoBehaviour:
   m_SpawnPrefabs:
   - {fileID: 120892, guid: 74c64060951977d4ab6a1ac4beaf499f, type: 2}
   - {fileID: 145368, guid: b0dd7886ceff9ec4c9d07b3bec02009a, type: 2}
-  m_CustomConfig: 0
+  - {fileID: 161474, guid: 2db075d3bc6970c46b3ed7885b9f3aba, type: 2}
+  - {fileID: 167288, guid: 123038318db43fc42ba8f1f2aafd4c10, type: 2}
+  - {fileID: 178686, guid: 0abf7c4f990648c4488e7a4411abf3d5, type: 2}
+  m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1500

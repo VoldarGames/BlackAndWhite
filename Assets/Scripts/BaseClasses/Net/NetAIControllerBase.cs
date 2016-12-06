@@ -28,7 +28,7 @@ namespace Assets.Scripts.BaseClasses.Net
           return _pathList;
         }
 
-        [SyncVar]
+        //[SyncVar]
         private Vector3 _destinationPosition;
 
         public Vector3 DestinationPosition
@@ -79,7 +79,7 @@ namespace Assets.Scripts.BaseClasses.Net
 
         public void GoTo(Vector3 position)
         {
-            RpcGoTo(position);
+            if(DestinationPosition != position) RpcGoTo(position);
             
         }
 

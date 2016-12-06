@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3316610}
   - 23: {fileID: 2382722}
   - 114: {fileID: 11451718}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall_Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}

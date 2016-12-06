@@ -118,13 +118,16 @@ namespace Assets.Scripts.Managers.Net
         public void Start()
         {
             AudioSourceManager audioSourceManager = new AudioSourceManager();
-            //if (!isLocalPlayer) return;
+           
             _mapManager = GameObject.Find(typeof(MapManager).Name);
-            InvokeRepeating("CheckGhostModel",0.0f,0.1f);
+            
             SetLayer();
             SetMaterial(MyTeam);
             SetPosition();
             SetGameobjectName();
+
+            if (!isLocalPlayer) return;
+            InvokeRepeating("CheckGhostModel", 0.0f, 0.1f);
         }
 
         private void SetGameobjectName()

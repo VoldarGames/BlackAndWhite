@@ -5,21 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B30F84C5-3E37-C4AE-5F85-C80CCEA352A2}</ProjectGuid>
+    <ProjectGuid>{52332AFF-6E0A-FF7C-531A-56256EFC5CEA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.3f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -65,58 +63,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="BlackAndWhite.CSharp.Plugins.csproj">
-      <Project>{F23F7863-14B0-2E5D-9944-06A63B068549}</Project>
-      <Name>BlackAndWhite.CSharp.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\ReturnToMainMenu.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\AIControllerBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\Net\FuSyncListVector3.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\Net\NetAIControllerBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\Net\NetStatsBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\ParticleSystemWorkflowBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\SpawnableBehaviourBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\StatsBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\TeamBase.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\BulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\FashionBulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\GhostBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\Net\NetBulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IBulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IKillable.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\INetBulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\INetKillable.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IParticleSystemWorkflow.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\ISpawnableBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\ISpawnerManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\AudioSourceManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\MapManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\Net\NetSpawnerManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\SpawnerManager.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\AIMancubusController.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\CoreStats.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\MancubusStats.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\MancubusWeaponController.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Net\NetAIMancubusController.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Net\NetCoreStats.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Net\NetMancubusStats.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Net\NetMancubusWeaponController.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Net\NetWallStats.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\Test.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\WallStats.cs" />
-    <Compile Include="Assets\Scripts\Utils\ExtendedMonoBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Utils\Global.cs" />
-    <Compile Include="Assets\Scripts\Utils\Pair.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\DraggablePanel.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyCountdownPanel.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyHook.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyInfoPanel.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyMainMenu.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyManager.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyPlayer.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyPlayerList.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyServerEntry.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyServerList.cs" />
+    <Compile Include="Assets\Standard Assets\Network\Scripts\Lobby\LobbyTopPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
@@ -125,5 +82,6 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

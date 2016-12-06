@@ -174,7 +174,20 @@ namespace Assets.Scripts.Managers
         public bool CanSpawn(int myTeam, Vector3 position)
         {
             var pair = FindMapGridIndexes(position);
-            return !IsInvalidPair(pair) && IsMyLand(myTeam,pair.First);
+            return !IsInvalidPair(pair) && IsMyLand(myTeam,pair.First) /*&& MapGridPositionIsEmpty(position)*/;
+        }
+
+        //TODO: No va bien, hacer raycast desde arriba y no desde la cámara
+        private bool MapGridPositionIsEmpty(Vector3 position)
+        {
+            var origin = new Vector3(position.x,position.y + Global.CanSpawnOriginOffsetForRaycast, position.z);
+            var direction = position - origin;
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(origin,direction, out hit, Global.CanSpawnOriginOffsetForRaycast,LayerMask.NameToLayer("Default"),QueryTriggerInteraction.Ignore))
+            {
+                return hit.transform.tag != "Unit";
+            }
+            return true;
         }
 
         private bool IsInvalidPair(Pair<int, int> pair)
