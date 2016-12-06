@@ -18,6 +18,9 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         private bool _debug;
 
+        //Lista de layers fisicas las cuales no va a ignorar el raycast.
+        public LayerMask Layermask;
+
         void Awake()
         {
             InitializeGridPositions();
@@ -174,7 +177,7 @@ namespace Assets.Scripts.Managers
         public bool CanSpawn(int myTeam, Vector3 position)
         {
             var pair = FindMapGridIndexes(position);
-            return !IsInvalidPair(pair) && IsMyLand(myTeam,pair.First) /*&& MapGridPositionIsEmpty(position)*/;
+            return !IsInvalidPair(pair) && IsMyLand(myTeam,pair.First) && MapGridPositionIsEmpty(position);
         }
 
         //TODO: No va bien, hacer raycast desde arriba y no desde la cámara
@@ -183,11 +186,18 @@ namespace Assets.Scripts.Managers
             var origin = new Vector3(position.x,position.y + Global.CanSpawnOriginOffsetForRaycast, position.z);
             var direction = position - origin;
             RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(origin,direction, out hit, Global.CanSpawnOriginOffsetForRaycast,LayerMask.NameToLayer("Default"),QueryTriggerInteraction.Ignore))
+            //DebugDrawRayCast(origin,position);
+            
+            if (Physics.Raycast(origin,direction, out hit, Global.CanSpawnOriginOffsetForRaycast, Layermask, QueryTriggerInteraction.Ignore))
             {
                 return hit.transform.tag != "Unit";
             }
             return true;
+        }
+
+        private void DebugDrawRayCast(Vector3 origin, Vector3 end)
+        {
+           Debug.DrawLine(origin,end, Color.green);
         }
 
         private bool IsInvalidPair(Pair<int, int> pair)

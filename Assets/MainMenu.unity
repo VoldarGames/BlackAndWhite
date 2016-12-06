@@ -571,6 +571,9 @@ MonoBehaviour:
   CoreB: {fileID: 0}
   WalkableZone: {fileID: 214234657}
   _debug: 0
+  Layermask:
+    serializedVersion: 2
+    m_Bits: 769
 --- !u!154 &2085142136
 TerrainCollider:
   m_ObjectHideFlags: 0

@@ -197,7 +197,7 @@ MonoBehaviour:
   Head: {fileID: 134580}
   Bullet: {fileID: 161474, guid: 2db075d3bc6970c46b3ed7885b9f3aba, type: 2}
   Targets: []
-  BulletCooldown: 0.3
+  BulletCooldown: 0.5
   RadarDistance: 15
   Radar: {fileID: 13580104}
   AimSpeed: 100

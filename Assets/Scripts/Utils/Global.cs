@@ -18,7 +18,7 @@ namespace Assets.Scripts.Utils
         public const float CooldownSoundType = 0.1f;
         public const float SoundTypeMinimumSpacingFactor = 0.25f;
         public const float SoundTypeMaximumSpacingFactor = 0.5f;
-        public const float CanSpawnOriginOffsetForRaycast = 10.0f;
+        public const float CanSpawnOriginOffsetForRaycast = 100.0f;
 
         public struct TeamId
         {
