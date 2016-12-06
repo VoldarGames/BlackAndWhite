@@ -91,15 +91,18 @@ namespace Assets.Scripts.Managers.Net
             Vector3 clickPosition = GetClickPosition();
             if (_mapManager.GetComponent<MapManager>().CanSpawn(MyTeam, clickPosition))
             {
-                SpawnableGhostGameObjectSelected.GetComponent<MeshRenderer>().material =
-                    SpawnableGameObjectCatalogA[SpawnableSelected].GetComponent<SpawnableBehaviourBase>()
-                        .CanSpawnMaterial;
+                foreach (var meshRenderer in SpawnableGhostGameObjectSelected.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.material = SpawnableGameObjectCatalogA[SpawnableSelected].GetComponent<SpawnableBehaviourBase>().CanSpawnMaterial;
+                }
+                    
             }
             else
             {
-                SpawnableGhostGameObjectSelected.GetComponent<MeshRenderer>().material =
-                   SpawnableGameObjectCatalogA[SpawnableSelected].GetComponent<SpawnableBehaviourBase>()
-                       .CantSpawnMaterial;
+                foreach (var meshRenderer in SpawnableGhostGameObjectSelected.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.material = SpawnableGameObjectCatalogA[SpawnableSelected].GetComponent<SpawnableBehaviourBase>().CantSpawnMaterial;
+                }
             }
         }
 

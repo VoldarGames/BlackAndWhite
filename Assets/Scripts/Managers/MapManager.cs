@@ -180,7 +180,6 @@ namespace Assets.Scripts.Managers
             return !IsInvalidPair(pair) && IsMyLand(myTeam,pair.First) && MapGridPositionIsEmpty(position);
         }
 
-        //TODO: No va bien, hacer raycast desde arriba y no desde la cámara
         private bool MapGridPositionIsEmpty(Vector3 position)
         {
             var origin = new Vector3(position.x,position.y + Global.CanSpawnOriginOffsetForRaycast, position.z);

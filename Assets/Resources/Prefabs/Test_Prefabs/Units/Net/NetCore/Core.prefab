@@ -144,15 +144,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561892717fd2a8a40bf30ee1aa2d9fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyTeam: 0
+  MyTeam: 1
   MaterialA: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   MaterialB: {fileID: 2100000, guid: c3f71ad9d0a147f4c9771dd41c3929d1, type: 2}
   _spawnableGameObjectCatalogA:
   - {fileID: 120892, guid: 74c64060951977d4ab6a1ac4beaf499f, type: 2}
   - {fileID: 167288, guid: 123038318db43fc42ba8f1f2aafd4c10, type: 2}
+  - {fileID: 103506, guid: cfe69346775455a44b8608195960fe7f, type: 2}
   _spawnableGameObjectCatalogB:
   - {fileID: 145368, guid: b0dd7886ceff9ec4c9d07b3bec02009a, type: 2}
   - {fileID: 178686, guid: 0abf7c4f990648c4488e7a4411abf3d5, type: 2}
+  - {fileID: 103506, guid: cb46645f6d1bd3b49a8644bbd239c33d, type: 2}
   _spawnableSelected: 0
 --- !u!135 &13567634
 SphereCollider:
