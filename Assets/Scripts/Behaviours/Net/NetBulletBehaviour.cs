@@ -62,6 +62,12 @@ namespace Assets.Scripts.Behaviours.Net
         private void SetVelocity()
         {
             GetComponent<Rigidbody>().velocity = Direction.normalized * Speed;
+            SetOrientation();
+        }
+
+        private void SetOrientation()
+        {
+            transform.rotation = Quaternion.LookRotation(GetComponent<Rigidbody>().velocity);
         }
 
 
@@ -97,7 +103,7 @@ namespace Assets.Scripts.Behaviours.Net
         }
 
         // Update is called once per frame
-        void Update() {}
+        //void Update() {}
 
     }
 }

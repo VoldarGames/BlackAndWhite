@@ -15,6 +15,27 @@ namespace Assets.Scripts.BaseClasses.Net
         [SyncVar]
         private int _health;
 
+        [SerializeField]
+        private GameObject _healthBar;
+
+        public GameObject HealthBar
+        {
+            get { return _healthBar; }
+            set { _healthBar = value; }
+        }
+
+        [SerializeField]
+        private Transform _healthBarPosition;
+
+        private GameObject _healthBarInstance;
+
+        public Transform HealthBarPosition
+        {
+            get { return _healthBarPosition; }
+            set { _healthBarPosition = value; }
+        }
+
+
         public bool IsDead
         {
             get { return _isDead; }
@@ -26,7 +47,20 @@ namespace Assets.Scripts.BaseClasses.Net
         public int Health
         {
             get { return _health; }
-            set { _health = value; }
+            set
+            {
+                _health = value;
+                RefreshHealthBar();
+            }
+        }
+
+        private void RefreshHealthBar()
+        {
+            if (MaxHealth == 0) return;
+            float healthRelation = (float)(Health * 1.0f)/ (float)(MaxHealth * 1.0f);
+            _healthBarInstance.transform.localScale = new Vector3(healthRelation, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
+            var color = Color.Lerp(Color.red, Color.green, healthRelation);
+            _healthBarInstance.GetComponent<SpriteRenderer>().color = color;
         }
 
         public int MaxHealth
@@ -40,6 +74,7 @@ namespace Assets.Scripts.BaseClasses.Net
         // Use this for initialization
         public virtual void Start()
         {
+            _healthBarInstance = Instantiate(HealthBar);
             IsDead = false;
             CanBeDamaged = true;
             Health = MaxHealth;
@@ -48,6 +83,7 @@ namespace Assets.Scripts.BaseClasses.Net
         // Update is called once per frame
         public virtual void Update()
         {
+            _healthBarInstance.GetComponent<FollowBehaviour>().Target = HealthBarPosition;
             CheckCanBeDamage();
 
         }

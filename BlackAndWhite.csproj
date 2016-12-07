@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\BaseClasses\Net\FuSyncListVector3.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\Net\NetAIControllerBase.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\Net\NetStatsBase.cs" />
+    <Compile Include="Assets\Scripts\BaseClasses\Net\NetWeaponController.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\ParticleSystemWorkflowBase.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\SpawnableBehaviourBase.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\StatsBase.cs" />
@@ -112,10 +113,12 @@
     <Compile Include="Assets\Scripts\TestScripts\Net\NetMancubusStats.cs" />
     <Compile Include="Assets\Scripts\TestScripts\Net\NetMancubusWeaponController.cs" />
     <Compile Include="Assets\Scripts\TestScripts\Net\NetTowerStats.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\Net\NetTowerWeaponController.cs" />
     <Compile Include="Assets\Scripts\TestScripts\Net\NetWallStats.cs" />
     <Compile Include="Assets\Scripts\TestScripts\Test.cs" />
     <Compile Include="Assets\Scripts\TestScripts\WallStats.cs" />
     <Compile Include="Assets\Scripts\Utils\ExtendedMonoBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Utils\FollowBehaviour.cs" />
     <Compile Include="Assets\Scripts\Utils\Global.cs" />
     <Compile Include="Assets\Scripts\Utils\Pair.cs" />
   </ItemGroup>

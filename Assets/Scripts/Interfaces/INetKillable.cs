@@ -1,7 +1,11 @@
-﻿namespace Assets.Scripts.Interfaces
+﻿using UnityEngine;
+
+namespace Assets.Scripts.Interfaces
 {
     public interface INetKillable
     {
+        GameObject HealthBar { get; set; }
+        Transform HealthBarPosition { get; set; }
         bool IsDead { get; set; }
         bool CanBeDamaged { get; set; }
         int Health { get; set; }

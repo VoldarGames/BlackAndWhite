@@ -39,6 +39,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &145150
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 478736}
+  m_Layer: 8
+  m_Name: HealthBarPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &196954
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,8 +84,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 495106}
+  - {fileID: 478736}
   m_Father: {fileID: 498602}
   m_RootOrder: 0
+--- !u!4 &478736
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 477132}
+  m_RootOrder: 1
 --- !u!4 &495106
 Transform:
   m_ObjectHideFlags: 1
@@ -90,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 0.5, z: 32}
+  m_LocalPosition: {x: 40, y: 0, z: 32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 477132}
@@ -194,7 +222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 196954}
-  Head: {fileID: 134580}
+  Firemode: 1
+  Heads:
+  - {fileID: 134580}
   Bullet: {fileID: 161474, guid: 2db075d3bc6970c46b3ed7885b9f3aba, type: 2}
   Targets: []
   BulletCooldown: 0.5
@@ -226,6 +256,8 @@ MonoBehaviour:
   _isDead: 0
   _maxHealth: 100
   _health: 0
+  _healthBar: {fileID: 100100, guid: 8c75cb23ba7ba4a45af24c3931b596e9, type: 2}
+  _healthBarPosition: {fileID: 478736}
 --- !u!114 &11462446
 MonoBehaviour:
   m_ObjectHideFlags: 1
