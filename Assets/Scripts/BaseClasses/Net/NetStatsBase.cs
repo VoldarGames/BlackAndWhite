@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Interfaces;
+﻿using Assets.Scripts.Behaviours;
+using Assets.Scripts.Interfaces;
 using Assets.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -50,18 +51,14 @@ namespace Assets.Scripts.BaseClasses.Net
             set
             {
                 _health = value;
-                RefreshHealthBar();
+                HealthChanged.Invoke(); //RefreshHealthBar in HealthBarBehaviour;
+
             }
         }
 
-        private void RefreshHealthBar()
-        {
-            if (MaxHealth == 0) return;
-            float healthRelation = (float)(Health * 1.0f)/ (float)(MaxHealth * 1.0f);
-            _healthBarInstance.transform.localScale = new Vector3(healthRelation, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
-            var color = Color.Lerp(Color.red, Color.green, healthRelation);
-            _healthBarInstance.GetComponent<SpriteRenderer>().color = color;
-        }
+        public OnHealthChanged HealthChanged { get; set; }
+
+        
 
         public int MaxHealth
         {
@@ -75,15 +72,17 @@ namespace Assets.Scripts.BaseClasses.Net
         public virtual void Start()
         {
             _healthBarInstance = Instantiate(HealthBar);
+            _healthBarInstance.GetComponent<HealthBarBehaviour>().SetContext(this);
+            _healthBarInstance.GetComponent<FollowBehaviour>().Target = HealthBarPosition;
             IsDead = false;
             CanBeDamaged = true;
             Health = MaxHealth;
+
         }
 
         // Update is called once per frame
         public virtual void Update()
         {
-            _healthBarInstance.GetComponent<FollowBehaviour>().Target = HealthBarPosition;
             CheckCanBeDamage();
 
         }

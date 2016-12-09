@@ -360,7 +360,6 @@ GameObject:
   - 20: {fileID: 1731597394}
   - 92: {fileID: 1731597393}
   - 124: {fileID: 1731597392}
-  - 81: {fileID: 1731597391}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -368,13 +367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1731597391
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1731597390}
-  m_Enabled: 1
 --- !u!124 &1731597392
 Behaviour:
   m_ObjectHideFlags: 0
@@ -432,9 +424,45 @@ Transform:
   m_LocalRotation: {x: 0.4320858, y: 0, z: 0, w: 0.9018325}
   m_LocalPosition: {x: 100, y: 73.17, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1810525151}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1810525150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1810525151}
+  - 81: {fileID: 1810525152}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1810525151
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1810525150}
+  m_LocalRotation: {x: -0.4320858, y: 0, z: 0, w: 0.9018325}
+  m_LocalPosition: {x: 0, y: -33.316517, z: 41.437405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1731597395}
+  m_RootOrder: 0
+--- !u!81 &1810525152
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1810525150}
+  m_Enabled: 1
 --- !u!1 &1817362303
 GameObject:
   m_ObjectHideFlags: 0

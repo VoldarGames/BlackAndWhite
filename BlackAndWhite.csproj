@@ -71,6 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BaseClasses\Net\UnitCost.cs" />
+    <Compile Include="Assets\Scripts\Behaviours\HealthBarBehaviour.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\ReturnToMainMenu.cs" />

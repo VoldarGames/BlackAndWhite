@@ -9,6 +9,7 @@ namespace Assets.Scripts.Interfaces
         bool IsDead { get; set; }
         bool CanBeDamaged { get; set; }
         int Health { get; set; }
+        OnHealthChanged HealthChanged { get; set; }
         int MaxHealth { get; set; }
         float NextCanBeDamaged { get; set; }
 
@@ -16,4 +17,6 @@ namespace Assets.Scripts.Interfaces
         void CmdDie();
         void CheckCanBeDamage(); 
     }
+
+    public delegate void OnHealthChanged();
 }
