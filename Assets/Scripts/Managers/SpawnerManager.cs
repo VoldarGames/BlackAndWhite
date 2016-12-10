@@ -16,6 +16,9 @@ namespace Assets.Scripts.Managers
 
         [SerializeField]
         private GameObject[] _spawnableGameObjectCatalogA;
+
+        public int[] AvailableUnits { get; set; }
+
         public GameObject[] SpawnableGameObjectCatalogA
         {
             get { return _spawnableGameObjectCatalogA; }

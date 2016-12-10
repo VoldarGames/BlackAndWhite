@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.BaseClasses;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Assets.Scripts.BaseClasses;
 using Assets.Scripts.Behaviours;
 using Assets.Scripts.Interfaces;
 using Assets.Scripts.Utils;
@@ -23,6 +25,8 @@ namespace Assets.Scripts.Managers.Net
 
         [SerializeField]
         private GameObject[] _spawnableGameObjectCatalogA;
+
+
         public GameObject[] SpawnableGameObjectCatalogA
         {
             get { return _spawnableGameObjectCatalogA; }
@@ -35,6 +39,14 @@ namespace Assets.Scripts.Managers.Net
         {
             get { return _spawnableGameObjectCatalogB; }
             set { _spawnableGameObjectCatalogB = value; }
+        }
+
+        [SerializeField] private int[] _availableUnits;
+
+        public int[] AvailableUnits
+        {
+            get { return _availableUnits; }
+            set { _availableUnits = value; }
         }
 
         [SerializeField] private int _spawnableSelected;
@@ -121,14 +133,12 @@ namespace Assets.Scripts.Managers.Net
         public void Start()
         {
             AudioSourceManager audioSourceManager = new AudioSourceManager();
-           
-            _mapManager = GameObject.Find(typeof(MapManager).Name);
-            
+             _mapManager = GameObject.Find(typeof(MapManager).Name);
+            AvailableUnits = new int[SpawnableGameObjectCatalogA.Length];
             SetLayer();
             SetMaterial(MyTeam);
             SetPosition();
             SetGameobjectName();
-
             if (!isLocalPlayer) return;
             InvokeRepeating("CheckGhostModel", 0.0f, 0.1f);
         }
@@ -160,6 +170,65 @@ namespace Assets.Scripts.Managers.Net
             }
 
             if (Input.GetKeyDown(KeyCode.Space)) ChangeSpawnableSelected();
+
+            ReadCreationSequence();
+        }
+
+        [SerializeField]
+        private string _sequence = "";
+
+        private Dictionary<string, int> _sequenceDictionary = new Dictionary<string, int>()
+        {
+            {"121212", 0},
+            {"123123123", 1},
+            {"123412341234", 2}
+        };
+        private void ReadCreationSequence()
+        {
+            // && !_sequenceStart
+
+            if (IsNumericInput())
+            {
+                _sequence += Input.inputString;
+                if (_sequenceDictionary.ContainsKey(_sequence))
+                {
+                    AddUnit(_sequenceDictionary[_sequence]);
+                    _sequence = "";
+                }
+                else
+                {
+                    if (!IsPartialSequence())
+                    {
+                        _sequence = "";
+                    }
+                    
+                }
+            }
+        }
+
+        private void AddUnit(int availableIndex)
+        {
+            AvailableUnits[availableIndex]++;
+        }
+
+        private bool IsPartialSequence()
+        {
+            bool isPartial = false;
+
+            foreach (var key in _sequenceDictionary.Keys)
+            {
+                isPartial |= key.StartsWith(_sequence);
+            }
+            return isPartial;
+        }
+
+        private bool IsNumericInput()
+        {
+            return Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Alpha1)
+                   || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3)
+                   || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5)
+                   || Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Alpha7)
+                   || Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Alpha9);
         }
 
         [Command]

@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11418558}
   - 114: {fileID: 11441972}
   - 114: {fileID: 11472272}
+  - 114: {fileID: 11400850}
   m_Layer: 0
   m_Name: Core
   m_TagString: Unit
@@ -95,6 +96,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141838}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11400850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1074b14f84381a4685859cdd2ca86bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capacity: 1000
 --- !u!114 &11418558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +198,9 @@ MonoBehaviour:
   - {fileID: 145368, guid: b0dd7886ceff9ec4c9d07b3bec02009a, type: 2}
   - {fileID: 178686, guid: 0abf7c4f990648c4488e7a4411abf3d5, type: 2}
   - {fileID: 103506, guid: cb46645f6d1bd3b49a8644bbd239c33d, type: 2}
+  _availableUnits: 
   _spawnableSelected: 0
+  _sequence: 
 --- !u!135 &13567634
 SphereCollider:
   m_ObjectHideFlags: 1
